@@ -1,0 +1,17 @@
+{
+  "name": "jerryproject",
+  "version": "1.0.0",
+  "description": "art project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "art"
+  ],
+  "author": "elizabeth viera",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  }
+}
