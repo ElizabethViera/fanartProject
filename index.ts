@@ -144,7 +144,7 @@ function draw() {
 let lastMoveDir = 1;
 let facingDir = 1;
 let movDir = 0;
-let right = 0;
+let right = 280;
 document.body.addEventListener("keydown", keyDown);
 document.body.addEventListener("keyup", keyUp);
 
