@@ -4,9 +4,8 @@
   "description": "art project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",   
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "parcel build index.html"
-     
   },
   "keywords": [
     "art"
@@ -14,6 +13,7 @@
   "author": "elizabeth viera",
   "license": "ISC",
   "devDependencies": {
+    "parcel-bundler": "^1.12.4",
     "typescript": "^4.1.3"
   }
 }
