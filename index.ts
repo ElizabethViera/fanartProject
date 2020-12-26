@@ -1,5 +1,5 @@
 const canvas = document.createElement("canvas");
-canvas.width = 800;
+canvas.width = 1450;
 canvas.height = 800;
 document.body.appendChild(canvas);
 const ctx = canvas.getContext("2d")!;
@@ -101,7 +101,7 @@ function drawJerry(right: number, dir: number) {
   ctx.lineWidth = 5;
   ctx.stroke();
 
-  const lingrad = ctx.createLinearGradient(0, 0, 800, 800);
+  const lingrad = ctx.createLinearGradient(0, 0, 1450, 800);
   lingrad.addColorStop(0, "#a8cfff");
   lingrad.addColorStop(0.75, "#ff9af1");
   ctx.filter = "blur(0px)";
@@ -131,7 +131,7 @@ function lerp(t: number, x0: number, x1: number) {
 
 function draw() {
   requestAnimationFrame(draw);
-  ctx.clearRect(0, 0, 800, 800);
+  ctx.clearRect(0, 0, 1450, 800);
   if (movDir != 0) {
     lastMoveDir = movDir;
   }
