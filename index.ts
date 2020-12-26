@@ -101,9 +101,9 @@ function drawJerry(right: number, dir: number) {
   ctx.lineWidth = 5;
   ctx.stroke();
 
-  const lingrad = ctx.createLinearGradient(0, 0, 1450, 800);
-  lingrad.addColorStop(0, "#a8cfff");
-  lingrad.addColorStop(0.75, "#ff9af1");
+  const lingrad = ctx.createLinearGradient(0, 0, 0, 800);
+  lingrad.addColorStop(0, "#F8A0E3");
+  lingrad.addColorStop(0.75, "#808DFA");
   ctx.filter = "blur(0px)";
   ctx.fillStyle = lingrad;
   ctx.fill();
