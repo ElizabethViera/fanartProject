@@ -1,8 +1,34 @@
 const canvas = document.createElement("canvas");
-canvas.width = 1450;
-canvas.height = 800;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 document.body.appendChild(canvas);
 const ctx = canvas.getContext("2d")!;
+
+function drawHills() {
+  const pts = [
+    { x: -30, y: 500 },
+    { x: 300, y: 600 },
+    { x: 600, y: 350 },
+    { x: 1900, y: 500 },
+  ];
+  ctx.beginPath();
+  for (const pt of pts) {
+    ctx.lineTo(pt.x, pt.y);
+  }
+  // ctx.stroke()
+  ctx.beginPath();
+  ctx.moveTo(pts[0].x, pts[0].y);
+  for (let i = 1; i + 1 < pts.length; i++) {
+    const nextPoint = {
+      x: (pts[i].x + pts[i + 1].x) / 2,
+      y: (pts[i].y + pts[i + 1].y) / 2,
+    };
+    ctx.quadraticCurveTo(pts[i].x, pts[i].y, nextPoint.x, nextPoint.y);
+  }
+  ctx.lineTo(pts[pts.length - 1].x, pts[pts.length - 1].y);
+  ctx.strokeStyle = "#76D1FA";
+  ctx.stroke();
+}
 
 function drawJerry(right: number, dir: number) {
   const pts = [
@@ -131,13 +157,14 @@ function lerp(t: number, x0: number, x1: number) {
 
 function draw() {
   requestAnimationFrame(draw);
-  ctx.clearRect(0, 0, 1450, 800);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   if (movDir != 0) {
     lastMoveDir = movDir;
   }
   facingDir = lerp(0.1, facingDir, Math.sign(lastMoveDir));
 
   right += movDir;
+  drawHills();
   drawJerry(right, -facingDir);
 }
 
